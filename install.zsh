@@ -30,7 +30,7 @@ FORGE_TEMPLATE=forge-template-1.20.1-47.2.30
       https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.30/forge-1.20.1-47.2.30-installer.jar
   }
 
-  java -jar $FORGE_INSTALLER --installServer forge-template
+  java -jar $FORGE_INSTALLER --installServer $FORGE_TEMPLATE
 
   rm $FORGE_INSTALLER $FORGE_INSTALLER.log
 
