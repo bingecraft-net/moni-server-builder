@@ -18,7 +18,7 @@ MONI_TEMPLATE=moni-server-0.2.2.zip.d
 
 }
 
-FORGE_TEMPLATE=forge-template-1.20.1-47.2.30
+FORGE_TEMPLATE=forge-template-1.20.1-47.2.31
 [[ ! -d $FORGE_TEMPLATE ]] && {
 
   FORGE_INSTALLER=forge-installer.jar
@@ -27,7 +27,7 @@ FORGE_TEMPLATE=forge-template-1.20.1-47.2.30
     echo downloading forge installer
     curl -sL \
       -o $FORGE_INSTALLER \
-      https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.30/forge-1.20.1-47.2.30-installer.jar
+      https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.31/forge-1.20.1-47.2.31-installer.jar
   }
 
   java -jar $FORGE_INSTALLER --installServer $FORGE_TEMPLATE
