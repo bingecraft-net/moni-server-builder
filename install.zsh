@@ -1,15 +1,16 @@
 #!/usr/bin/env zsh
 
-MONI_TEMPLATE=moni-server-0.2.2.zip.d
+MONI_VERSION=0.2.2
+MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
 [[ ! -d $MONI_TEMPLATE ]] && {
 
-  MONI_SERVER_ZIP=moni-server-0.2.2.zip 
+  MONI_SERVER_ZIP=moni-server-$MONI_VERSION.zip 
   
   [[ ! -a $MONI_SERVER_ZIP ]] && {
     echo downloading moni server zip
     curl -sL \
       -o $MONI_SERVER_ZIP \
-      https://github.com/ThePansmith/Monifactory/releases/download/0.2.2/server.zip
+      https://github.com/ThePansmith/Monifactory/releases/download/$MONI_VERSION/server.zip
   }
 
   unzip -d $MONI_TEMPLATE $MONI_SERVER_ZIP
@@ -18,7 +19,8 @@ MONI_TEMPLATE=moni-server-0.2.2.zip.d
 
 }
 
-FORGE_TEMPLATE=forge-template-1.20.1-47.2.31
+FORGE_VERSION=1.20.1-47.2.31
+FORGE_TEMPLATE=forge-template-$FORGE_VERSION
 [[ ! -d $FORGE_TEMPLATE ]] && {
 
   FORGE_INSTALLER=forge-installer.jar
@@ -27,7 +29,7 @@ FORGE_TEMPLATE=forge-template-1.20.1-47.2.31
     echo downloading forge installer
     curl -sL \
       -o $FORGE_INSTALLER \
-      https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.31/forge-1.20.1-47.2.31-installer.jar
+      https://maven.minecraftforge.net/net/minecraftforge/forge/$FORGE_VERSION/forge-$FORGE_VERSION-installer.jar
   }
 
   java -jar $FORGE_INSTALLER --installServer $FORGE_TEMPLATE
