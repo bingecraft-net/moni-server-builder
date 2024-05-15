@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-MONI_VERSION=0.2.2
+MONI_VERSION=0.2.6
 MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
 [[ ! -d $MONI_TEMPLATE ]] && {
 
@@ -13,7 +13,8 @@ MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
       https://github.com/ThePansmith/Monifactory/releases/download/$MONI_VERSION/server.zip
   }
 
-  unzip -d $MONI_TEMPLATE $MONI_SERVER_ZIP
+  unzip -d $MONI_TEMPLATE $MONI_SERVER_ZIP \
+    -x 'overrides/mods/citresewn-1.20.1-5.jar'
 
   rm $MONI_SERVER_ZIP
 
