@@ -39,9 +39,16 @@ FORGE_TEMPLATE=forge-template-$FORGE_VERSION
 
 }
 
-TARGET=server
-[[   -d $TARGET ]] && echo target $TARGET already exists
-[[ ! -d $TARGET ]] && {
-  cp -r $FORGE_TEMPLATE $TARGET
-  cp -r $MONI_TEMPLATE/overrides/* $TARGET
+TARGET_DIR=server
+[[   -d $TARGET_DIR ]] && echo target dir $TARGET_DIR already exists
+[[ ! -d $TARGET_DIR ]] && {
+  cp -r $FORGE_TEMPLATE $TARGET_DIR
+  cp -r $MONI_TEMPLATE/overrides/* $TARGET_DIR
 }
+
+if [[ ! -z $TARGET ]] ; then
+  rsync -avr ./ $TARGET \
+    --include 'server/***' \
+    --include run-accept-eula.zsh \
+    --exclude '*'
+fi
