@@ -1,3 +1,5 @@
 forge-template-*
 moni-server-*
 server
+overrides/mods
+secrets.properties
