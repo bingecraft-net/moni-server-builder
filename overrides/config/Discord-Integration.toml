@@ -4,7 +4,7 @@
   # DO NOT SHARE IT WITH ANYONE!
   botToken = "DiscordIntegration.botToken"
   # The channel ID where the bot will be working in
-  botChannel = "1241054267872378891"
+  botChannel = "1240767897882591415"
   # The bots status message
   # 
   # PLACEHOLDERS:
@@ -213,10 +213,10 @@ charBlacklist = [  "࿕", "࿖"  ]
   deathsChannelID = "default"
   # Custom channel for for in-game messages
   # Leave 'default' to use default channel
-  chatOutputChannelID = "default"
+  chatOutputChannelID = "1241054267872378891"
   # Custom channel where messages get sent to minecraft
   # Leave 'default' to use default channel
-  chatInputChannelID = "default"
+  chatInputChannelID = "1241054267872378891"
   # Allows you to change the target URL for the API to make it usable with custom discord instances like Spacebar
   # DO NOT CHANGE if you don't know what you are doing!!
   baseAPIUrl = "https://discord.com"
