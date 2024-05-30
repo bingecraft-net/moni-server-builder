@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-MONI_VERSION=0.4.1
+MONI_VERSION=0.4.2
 MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
 [[ ! -d $MONI_TEMPLATE ]] && {
 
