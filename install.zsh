@@ -52,6 +52,8 @@ DI_JAR=dcintegration-forge-$DI_VERSION.jar
 
 }
 
+ls -la $OVERRIDES_MODS_DIR
+
 TARGET_DIR=server
 [[   -d $TARGET_DIR ]] && echo target dir $TARGET_DIR already exists
 [[ ! -d $TARGET_DIR ]] && {
