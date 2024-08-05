@@ -57,7 +57,12 @@ DI_JAR=dcintegration-forge-$DI_VERSION.jar
 
 }
 
+echo "!! OVERRIDE MODS TO BE INSTALLED: !!"
 ls -la $OVERRIDES_MODS_DIR
+if ! read -q "choice?Does it look good? [Y/y] " ; then
+  echo
+  echo "you said '$choice' so goodbye"
+fi
 
 cp -r $FORGE_TEMPLATE $TARGET_DIR
 cp -r $MONI_TEMPLATE/overrides/* $TARGET_DIR
