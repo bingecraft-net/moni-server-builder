@@ -6,7 +6,7 @@ if [[   -d $TARGET_DIR ]] ; then
   exit 1
 fi
 
-MONI_VERSION=0.7.1
+MONI_VERSION=0.7.2
 MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
 MONI_ZIP=Monifactory-Alpha.$MONI_VERSION-server.zip
 [[ ! -d $MONI_TEMPLATE ]] && {
