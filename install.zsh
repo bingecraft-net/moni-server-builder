@@ -1,21 +1,20 @@
 #!/usr/bin/env zsh
 
-MONI_VERSION=0.5.3
+MONI_VERSION=0.7.0
 MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
+MONI_ZIP=Monifactory-Alpha.$MONI_VERSION-server.zip
 [[ ! -d $MONI_TEMPLATE ]] && {
-
-  MONI_SERVER_ZIP=moni-server-$MONI_VERSION.zip 
   
-  [[ ! -a $MONI_SERVER_ZIP ]] && {
+  [[ ! -a $MONI_ZIP ]] && {
     echo downloading moni server zip
     curl -sL \
-      -o $MONI_SERVER_ZIP \
-      https://github.com/ThePansmith/Monifactory/releases/download/$MONI_VERSION/server.zip
+      -o $MONI_ZIP \
+      https://github.com/ThePansmith/Monifactory/releases/download/$MONI_VERSION/$MONI_ZIP
   }
 
-  unzip -d $MONI_TEMPLATE $MONI_SERVER_ZIP
+  unzip -d $MONI_TEMPLATE $MONI_ZIP
 
-  rm $MONI_SERVER_ZIP
+  rm $MONI_ZIP
 
 }
 
