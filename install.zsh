@@ -80,11 +80,3 @@ TARGET_DIR=server
   }
 
 }
-
-if [[ ! -z $TARGET ]] ; then
-  rsync -avr ./ $TARGET \
-    --include 'server/***' \
-    --include run-accept-eula.zsh \
-    --include restore-latest-backup.zsh \
-    --exclude '*'
-fi
