@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
 
+TARGET_DIR=server
+if [[   -d $TARGET_DIR ]] ; then 
+  echo target dir $TARGET_DIR already exists
+  exit 1
+fi
+
 MONI_VERSION=0.7.1
 MONI_TEMPLATE=moni-server-$MONI_VERSION.zip.d
 MONI_ZIP=Monifactory-Alpha.$MONI_VERSION-server.zip
@@ -53,30 +59,25 @@ DI_JAR=dcintegration-forge-$DI_VERSION.jar
 
 ls -la $OVERRIDES_MODS_DIR
 
-TARGET_DIR=server
-[[   -d $TARGET_DIR ]] && echo target dir $TARGET_DIR already exists
-[[ ! -d $TARGET_DIR ]] && {
+cp -r $FORGE_TEMPLATE $TARGET_DIR
+cp -r $MONI_TEMPLATE/overrides/* $TARGET_DIR
+cp -r $OVERRIDES_DIR/* $TARGET_DIR
 
-  cp -r $FORGE_TEMPLATE $TARGET_DIR
-  cp -r $MONI_TEMPLATE/overrides/* $TARGET_DIR
-  cp -r $OVERRIDES_DIR/* $TARGET_DIR
+{
 
-  {
+  declare -a sedArgs
 
-    declare -a sedArgs
+  while read entry ; do
+    key=${entry%%=*}
+    value=${entry#*=}
+    sedArgs+=("-e")
+    sedArgs+=("s|$key|$value|Ig")
+  done < secrets.properties
 
-    while read entry ; do
-      key=${entry%%=*}
-      value=${entry#*=}
-      sedArgs+=("-e")
-      sedArgs+=("s|$key|$value|Ig")
-    done < secrets.properties
-
-    find server/config -type f | while read file ; do
-      sed -i.orig "${sedArgs[@]}" $file
-      cmp "$file" "$file.orig" && mv "$file.orig" "$file"
-    done
-
-  }
+  find server/config -type f | while read file ; do
+    sed -i.orig "${sedArgs[@]}" $file
+    cmp "$file" "$file.orig" && mv "$file.orig" "$file"
+  done
 
 }
+
