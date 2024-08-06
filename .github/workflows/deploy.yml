@@ -1,0 +1,46 @@
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  check-target:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/ssh
+        with:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+      - id: check-target
+        run: |
+          source versions.zsh
+          if ssh bingecraft-net@pink.bingecraft.net -- ls $MONI_VERSION ; then
+            echo target directory already exists
+          else
+            echo TARGET=bingecraft-net@pink.bingecraft.net:$MONI_VERSION >> "$GITHUB_OUTPUT"
+          fi
+    outputs:
+      TARGET: ${{ steps.check-target.outputs.TARGET }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: check-target
+    if: ${{ needs.check-target.outputs.TARGET }}
+    steps:
+      - name: install zsh
+        run: |
+          sudo apt-get update && sudo apt-get install -y zsh && sudo apt-get clean
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/ssh
+        with:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+      - run: |
+          echo "export DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" >> secrets.zsh
+          chmod +x secrets.zsh
+          ./build.zsh
+      - name: upload server files
+        run: |
+          rsync -avr \
+            --include 'server/***' \
+            --include restore-latest-backup.zsh \
+            --include run-accept-eula.zsh \
+            --exclude '*' \
+            ./ ${{ needs.check-target.outputs.TARGET }}/

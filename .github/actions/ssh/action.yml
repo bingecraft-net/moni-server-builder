@@ -1,0 +1,23 @@
+name: ssh
+description: configures bingecraft-net org ssh known_hosts and private key
+
+inputs:
+  SSH_KEY:
+    description: ssh private key to install
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: install known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        echo pink.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIp2SHA0gzHnvvaGagLF3Qbuao3EhFA5knKgfH9JQhmUp4cTq3WZDHmsC3sy/0gaf/NXrBvbF1qlQnzeJoFtLWs= >> ~/.ssh/known_hosts
+      shell: bash
+    - name: install private key
+      run: |
+        SSH_KEY_FILE=~/.ssh/id_ed25519
+        touch $SSH_KEY_FILE
+        chmod 600 $SSH_KEY_FILE
+        echo "${{ inputs.SSH_KEY }}" > $SSH_KEY_FILE
+      shell: bash
