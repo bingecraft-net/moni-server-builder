@@ -1,5 +1,3 @@
-forge-template-*
-moni-server-*
+cache
 server
-overrides/mods
-secrets.properties
+secrets.zsh
