@@ -5,7 +5,7 @@ source versions.zsh
 mkdir -p cache
 
 export MONI_TEMPLATE=cache/moni-server-$MONI_VERSION.zip.d
-MONI_ZIP=Monifactory-Alpha.$MONI_VERSION-server.zip
+MONI_ZIP=Monifactory-Beta.$MONI_VERSION-server.zip
 [[ ! -d $MONI_TEMPLATE ]] && {
   
   [[ ! -a $MONI_ZIP ]] && {
