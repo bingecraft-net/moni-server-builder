@@ -10,7 +10,7 @@
 	/* Backup retention mode. Valid Modes: MAX_BACKUPS, TIERED
 	   Note: TIERED mode is an experimental feature, Use at your own risk.
 	*/
-	"retention_mode": "MAX_BACKUPS",
+	"retention_mode": "TIERED",
 	// Applies to retention_mode:MAX_BACKUPS, Sets the maximum number of backups to keep
 	"max_backups": 24,
 	// Applies to retention_mode:TIERED, The latest x number of backups will be retained
