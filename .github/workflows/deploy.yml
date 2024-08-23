@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
 
@@ -13,10 +14,11 @@ jobs:
       - id: check-target
         run: |
           source versions.zsh
-          if ssh bingecraft-net@pink.bingecraft.net -- ls $MONI_VERSION ; then
+          TARGET_DIR=moni_$MONI_VERSION
+          if ssh bingecraft-net@pink.bingecraft.net -- ls $TARGET_DIR; then
             echo target directory already exists
           else
-            echo TARGET=bingecraft-net@pink.bingecraft.net:$MONI_VERSION >> "$GITHUB_OUTPUT"
+            echo TARGET=bingecraft-net@pink.bingecraft.net:$TARGET_DIR >> "$GITHUB_OUTPUT"
           fi
     outputs:
       TARGET: ${{ steps.check-target.outputs.TARGET }}
