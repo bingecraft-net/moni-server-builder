@@ -14,7 +14,7 @@ jobs:
       - id: check-target
         run: |
           source versions.zsh
-          TARGET_DIR=moni_$MONI_VERSION
+          TARGET_DIR=$MONI_VERSION
           if ssh bingecraft-net@pink.bingecraft.net -- ls $TARGET_DIR; then
             echo target directory already exists
           else
