@@ -15,10 +15,10 @@ jobs:
         run: |
           source versions.zsh
           TARGET_DIR=$MONI_VERSION
-          if ssh bingecraft-net@pink.bingecraft.net -- ls $TARGET_DIR; then
+          if ssh bingecraft-net@nebula-blue.bingecraft.net -- ls $TARGET_DIR; then
             echo target directory already exists
           else
-            echo TARGET=bingecraft-net@pink.bingecraft.net:$TARGET_DIR >> "$GITHUB_OUTPUT"
+            echo TARGET=bingecraft-net@nebula-blue.bingecraft.net:$TARGET_DIR >> "$GITHUB_OUTPUT"
           fi
     outputs:
       TARGET: ${{ steps.check-target.outputs.TARGET }}
