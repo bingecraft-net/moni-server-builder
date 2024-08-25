@@ -12,13 +12,13 @@
 	*/
 	"retention_mode": "TIERED",
 	// Applies to retention_mode:MAX_BACKUPS, Sets the maximum number of backups to keep
-	"max_backups": 24,
+	"max_backups": 32,
 	// Applies to retention_mode:TIERED, The latest x number of backups will be retained
-	"keep_latest": 5,
+	"keep_latest": 32,
 	// Applies to retention_mode:TIERED, Sets number of hourly backups to keep
-	"keep_hourly": 1,
+	"keep_hourly": 12,
 	// Applies to retention_mode:TIERED, Sets number of daily backups to keep
-	"keep_daily": 1,
+	"keep_daily": 7,
 	// Applies to retention_mode:TIERED, Sets number of weekly backups to keep
 	"keep_weekly": 1,
 	// Applies to retention_mode:TIERED, Sets number of monthly backups to keep
