@@ -42,6 +42,7 @@ jobs:
         run: |
           rsync -avr \
             --include 'server/***' \
+            --include backup-schedule.zsh \
             --include restore-latest-backup.zsh \
             --include run-accept-eula.zsh \
             --exclude '*' \
