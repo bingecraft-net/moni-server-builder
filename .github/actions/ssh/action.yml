@@ -1,5 +1,5 @@
 name: ssh
-description: configures bingecraft-net org ssh known_hosts and private key
+description: configures ssh known_hosts and private key
 
 inputs:
   SSH_KEY:
@@ -12,7 +12,7 @@ runs:
     - name: install known_hosts
       run: |
         mkdir -p ~/.ssh
-        echo nebula-blue.bingecraft.net ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBf1ojhBcMtzuxZoupiBgzLWRaT7/kfKBIf1eRzWVs2o >> ~/.ssh/known_hosts
+        echo nebula-pink.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCOPJsWQgUwrjWPxrmr9YkC83yWtmK/sTBIgFyOTXc7cdkkjoSVYFxycCCawNyv32Y9BkA0J+et6zjaLy/7a4HA= >> ~/.ssh/known_hosts
       shell: bash
     - name: install private key
       run: |
