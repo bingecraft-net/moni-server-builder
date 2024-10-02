@@ -207,7 +207,7 @@ charBlacklist = [  "࿕", "࿖"  ]
 [advanced]
   # Custom channel ID for server specific messages (like Join/leave)
   # Leave 'default' to use default channel
-  serverChannelID = "default"
+  serverChannelID = "1241054267872378891"
   # Custom channel ID for death messages
   # Leave 'default' to use default channel
   deathsChannelID = "default"
