@@ -12,7 +12,7 @@ runs:
     - name: install known_hosts
       run: |
         mkdir -p ~/.ssh
-        echo nebula-pink.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCOPJsWQgUwrjWPxrmr9YkC83yWtmK/sTBIgFyOTXc7cdkkjoSVYFxycCCawNyv32Y9BkA0J+et6zjaLy/7a4HA= >> ~/.ssh/known_hosts
+        echo nebula-blue.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeZhpq4QgvmY6uyoEwhqAVlT8FK0okUDafsBEHkRGcXmfbKRMyxn/HRO/z1UW2Or6avFBr0TKqc+Kt6LsdBSkI= >> ~/.ssh/known_hosts
       shell: bash
     - name: install private key
       run: |
