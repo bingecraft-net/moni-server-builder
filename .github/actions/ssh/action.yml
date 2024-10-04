@@ -12,7 +12,16 @@ runs:
     - name: install known_hosts
       run: |
         mkdir -p ~/.ssh
-        echo nebula-blue.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeZhpq4QgvmY6uyoEwhqAVlT8FK0okUDafsBEHkRGcXmfbKRMyxn/HRO/z1UW2Or6avFBr0TKqc+Kt6LsdBSkI= >> ~/.ssh/known_hosts
+        cat <<EOF >> ~/.ssh/known_hosts
+        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        nebula-pink.bingecraft.net ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV2DOOFp9t237UDpN5zBQ87qTYWxkkrzXsOrhTOyvhwYmUjrw2jxc8MAjBGOqtqGI4ZDbe5mKEiNOswT4QLKGQY8hXAw9k8XXzmBNIuHOJC6ZWlQ+2uUWWPauaWBXYxHjNmjUG6FZ5t47K9hyndRNwQTV+WpoJFUgBMQFD8nF0y2mH0LsBZWkB3QY9AFG9R8oiehV/TQN1IC9L9kyfJG5eUra9Fvl/TPeOYSe8dwVxhfSVnDsuSCVzP0zXwzVxKeJcTZL1BgP0ZZP6vrH6Zx8xWgZB7Iv8c1uua2OpiowURn1/qNgbae/3QiBAwAYZqg7CpE0VMjbgDIadX+IKb5iIVZRfsjWE/s/mzpTUxd4bc0wVjQQ5sToYW7e1ix0uDx0N9vYvHHt9egJF30FB5Xbz4Sb5MePOs1CPCn7rma+iROUdbpMLbm9m5QZEJpb0C3tQ7FimHsaQ/ZihJbGCW5E+MeB1sNn19miIcN9MImJ/wMxKj1LFDlHHAvFKyzv5vc8=
+        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        nebula-pink.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD2IHzu7EWsezmG9eHUS7rOte6wd2DQAfRwo1/YsJGPvCrXOKkncbVSv2066ttgsJhYi+hLgnShiZnwSzezfgHg=
+        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        nebula-pink.bingecraft.net ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAAOp6CM3rAhhcZwmR2ancSs0Pxuwm6Oht7UyoVqzzlq
+        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        EOF
       shell: bash
     - name: install private key
       run: |
