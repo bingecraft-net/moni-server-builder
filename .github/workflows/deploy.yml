@@ -15,10 +15,10 @@ jobs:
         run: |
           source versions.zsh
           TARGET_DIR=$MONI_VERSION
-          if ssh moni@nebula-pink.bingecraft.net -- ls $TARGET_DIR; then
+          if ssh moni@nebula-blue.bingecraft.net -- ls $TARGET_DIR; then
             echo target directory already exists
           else
-            echo TARGET=moni@nebula-pink.bingecraft.net:$TARGET_DIR >> "$GITHUB_OUTPUT"
+            echo TARGET=moni@nebula-blue.bingecraft.net:$TARGET_DIR >> "$GITHUB_OUTPUT"
           fi
     outputs:
       TARGET: ${{ steps.check-target.outputs.TARGET }}
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/ssh
         with:
-          SSH_KEY: ${{ secrets.SSH_KEY_MONI_NEBULA_PINK }}
+          SSH_KEY: ${{ secrets.SSH_KEY_MONI_NEBULA_BLUE }}
       - run: |
           echo "export DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" >> secrets.zsh
           chmod +x secrets.zsh

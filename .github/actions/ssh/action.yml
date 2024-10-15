@@ -13,14 +13,14 @@ runs:
       run: |
         mkdir -p ~/.ssh
         cat <<EOF >> ~/.ssh/known_hosts
-        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
-        nebula-pink.bingecraft.net ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV2DOOFp9t237UDpN5zBQ87qTYWxkkrzXsOrhTOyvhwYmUjrw2jxc8MAjBGOqtqGI4ZDbe5mKEiNOswT4QLKGQY8hXAw9k8XXzmBNIuHOJC6ZWlQ+2uUWWPauaWBXYxHjNmjUG6FZ5t47K9hyndRNwQTV+WpoJFUgBMQFD8nF0y2mH0LsBZWkB3QY9AFG9R8oiehV/TQN1IC9L9kyfJG5eUra9Fvl/TPeOYSe8dwVxhfSVnDsuSCVzP0zXwzVxKeJcTZL1BgP0ZZP6vrH6Zx8xWgZB7Iv8c1uua2OpiowURn1/qNgbae/3QiBAwAYZqg7CpE0VMjbgDIadX+IKb5iIVZRfsjWE/s/mzpTUxd4bc0wVjQQ5sToYW7e1ix0uDx0N9vYvHHt9egJF30FB5Xbz4Sb5MePOs1CPCn7rma+iROUdbpMLbm9m5QZEJpb0C3tQ7FimHsaQ/ZihJbGCW5E+MeB1sNn19miIcN9MImJ/wMxKj1LFDlHHAvFKyzv5vc8=
-        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
-        nebula-pink.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD2IHzu7EWsezmG9eHUS7rOte6wd2DQAfRwo1/YsJGPvCrXOKkncbVSv2066ttgsJhYi+hLgnShiZnwSzezfgHg=
-        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
-        nebula-pink.bingecraft.net ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAAOp6CM3rAhhcZwmR2ancSs0Pxuwm6Oht7UyoVqzzlq
-        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
-        # nebula-pink.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        # nebula-blue.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        # nebula-blue.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        nebula-blue.bingecraft.net ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzTDMER+9dxee10DjVGKruESjvb7upR+1esZUpIzh6PSNadghW9PyYIj6sEFCE2EYHrqogsVN2kqDLy06LhdwOsgO8nR7TREP0+4UNNYa7dbkUJdqKpmXQMjM5pqsMHXPcXh1+5xSLWMAQmojF6nKfBJ0zDMimr3IgEypE2DtduZGuJxn2IF2u831is4fdT7jz+YjzztuVYry4fr8fVMXPGTtbfKgeSis/66X6u4FpZ4Wonutd5g2owUlePdOdGkE5M/4cnnjcKvGhP1D8v5bNmvrDo19Xjq3b+p22fYcpAduUMx1GMOW8O+Z78NtZ+ooha6A3tmLy1YB2LGZUKcsk9OtXTxynjKZJzVjzpM3/M0ebW1OlHCRRhusKKwQjpuZKDc1lwmgozPToi2XEQfFtfgecH/htqvKMYKSXXi2dHR7HCcT6yLvXhMQhoAkwTSX2Pw39s0jYK62H6pVjdgdpQ0lRZsUaubBfv9heGFMIYLy4BjMxXjMdss8wbcMVDW0=
+        # nebula-blue.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        nebula-blue.bingecraft.net ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPq2qC/97w1eh8BIGTC02+DgTN477vqyDb+cTwu1OdvXagIR4Mh5dMsNYjFMtHejymA2ICd+qwdGW6ViJw4r/OI=
+        # nebula-blue.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+        nebula-blue.bingecraft.net ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMPf9xH2cpjE1VOtFQyyT8/APN/UFfh/WIXNfgVP8gvj
+        # nebula-blue.bingecraft.net:22 SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
         EOF
       shell: bash
     - name: install private key
